@@ -83,7 +83,7 @@ class Shell(ShellBase):
         self.delegate = None
         self.mainframe = None
 
-    def run(self):
+    def _run(self):
 
         self.app = NSApplication.sharedApplication()
         self.app.activateIgnoringOtherApps_(True)

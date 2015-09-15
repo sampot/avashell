@@ -189,7 +189,7 @@ class Shell(ShellBase):
         self.main_frame = MainFrame(self.message_map)
         self.status_icon = StatusIcon(self)
 
-    def run(self):
+    def _run(self):
         # while not win32gui.PumpWaitingMessages():
         #    time.sleep(0.1)
         win32gui.PumpMessages()

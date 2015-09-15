@@ -50,7 +50,7 @@ class Shell(ShellBase):
         super(Shell, self).__init__()
         self.statusIcon = StatusIcon(self)
 
-    def run(self):
+    def _run(self):
         Gtk.main()
 
 

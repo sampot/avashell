@@ -27,6 +27,28 @@ else:
     print("Unsupported operating system")
     sys.exit(-1)
 
+
+# for copying data file according to PyInstaller's recipe
+def Datafiles(*filenames, **kw):
+    import os
+
+    def datafile(path, strip_path=True):
+        parts = path.split('/')
+        path = name = os.path.join(*parts)
+        if strip_path:
+            name = os.path.basename(path)
+        return name, path, 'DATA'
+
+    strip_path = kw.get('strip_path', True)
+    return TOC(
+        datafile(filename, strip_path=strip_path)
+        for filename in filenames
+        if os.path.isfile(filename))
+
+# declared the extra script files to be added
+shfiles = Datafiles('avaconfig.py', 'avastartup.py')
+
+
 a = Analysis([script],
              pathex=[],
              hiddenimports=[],
@@ -49,8 +71,8 @@ coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
                Tree(res_path, 'res', excludes=['*.pyc']),
-
                a.datas,
+               shfiles,          # add script files to the collection.
                strip=None,
                upx=run_upx,
                name=app_name)
