@@ -3,7 +3,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import sys
 
-from . import exports  # keep this even it's not used by the launcher.
+import exports  # keep this even it's not used by the launcher.
 
 
 def create_shell():

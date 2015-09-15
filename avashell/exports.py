@@ -15,4 +15,5 @@ import _sqlite3
 from encodings import hex_codec, ascii, utf_8, utf_32
 from click import group, command
 
+import gevent
 from avashell import utils
