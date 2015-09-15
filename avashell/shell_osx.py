@@ -3,14 +3,7 @@ from __future__ import print_function, absolute_import, unicode_literals
 
 import os
 import logging
-from collections import Mapping
-from threading import Thread
-
-_NOTIFICATIONS = True
-try:
-    from Foundation import NSUserNotification, NSUserNotificationCenter
-except ImportError:
-    _NOTIFICATIONS = False
+import AppKit
 
 from Foundation import (NSDate, NSTimer, NSRunLoop, NSDefaultRunLoopMode, NSSearchPathForDirectoriesInDomains,
                         NSMakeRect, NSLog, NSObject)
@@ -32,19 +25,11 @@ def applicationSupportFolder(self):
     return fullPath
 
 
-def pathForFilename(self,filename):
-    return self.applicationSupportFolder().stringByAppendingPathComponent_(filename)
-
-
 class AppDelegate(NSObject):
     def init(self):
         # self = super(AppDelegate, self).init()
         if self is None:
             return None
-
-        # Get objc references to the classes we need.
-        self.NSUserNotification = objc.lookUpClass('NSUserNotification')
-        self.NSUserNotificationCenter = objc.lookUpClass('NSUserNotificationCenter')
 
         return self
 

@@ -7,25 +7,27 @@ import sys
 
 app_name = 'avashell'
 exe_name = 'avashell'
-
 res_path = os.path.join('.', 'res')
 
 if sys.platform == 'win32':
     exe_name = exe_name + '.exe'
     run_upx = False
+    script = 'avashell/shell_win32.py'
 
 elif sys.platform.startswith('linux'):
     run_strip = True
     run_upx = False
+    script = 'avashell/shell_gtk.py'
 
 elif sys.platform.startswith('darwin'):
     run_upx = False
+    script = 'avashell/shell_osx.py'
 
 else:
     print("Unsupported operating system")
     sys.exit(-1)
 
-a = Analysis(['avashell/launcher.py'],
+a = Analysis([script],
              pathex=[],
              hiddenimports=[],
              hookspath=None,
