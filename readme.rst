@@ -1,7 +1,8 @@
-Demo app for System tray icon with PySide
+AvaShell
 ###########################################
 
-This is simple app with PySide which demo how to use the system tray icon and then package it up with PyInstaller.
+A desktop app that launches a Python script when started and then stays in system tray.
+Might be useful if you need to keep running a script in the background. E.g. web crawler.
 
 License
 -------------
