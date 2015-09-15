@@ -223,3 +223,6 @@ class Shell(ShellBase):
             self.open_help()
 
 
+if __name__ == '__main__':
+    shell = Shell()
+    shell.run()
