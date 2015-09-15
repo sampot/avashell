@@ -9,6 +9,11 @@ STR_OPEN_HELP = u'Help...'
 STR_EXIT = u'Quit AvaShell'
 STR_STATUS = u'AvaShell - running'
 
+try:
+    from avaconfig import *
+except ImportError:
+    pass
+
 class ShellBase(object):
 
     def __init__(self):
