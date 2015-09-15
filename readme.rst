@@ -31,7 +31,7 @@ Windows
 Launch the application from command line.
 .. code-block:: bash
 
-    dist\avashell\avashell.exe
+    dist\\avashell\\avashell.exe
 
 OS X
 --------------------
