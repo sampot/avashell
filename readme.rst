@@ -14,6 +14,32 @@ Checkout Source Codes
     git submodule init
     git submodule update
 
+Dependencies
+===================================
+
+All Python versions are 2.7.x.
+
+Windows
+----------------
+
+* PyWin32
+
+Tested with Anaconda distribution only.
+
+OS X
+---------------
+
+* PyObjc
+
+Tested with Python installed via Homebrew.
+
+Ubuntu
+---------------
+
+* PyGObject
+
+Tested with system Python package.
+
 Make the Distribution Package
 ===================================
 
